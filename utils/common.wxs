@@ -1,0 +1,6 @@
+//简单的页面工具函数。
+module.exports = {
+  stringify: function (obj) {
+    return JSON.stringify(obj);
+  }
+};

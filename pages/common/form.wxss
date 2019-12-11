@@ -1,1 +1,150 @@
 /* pages/common/form.wxss */
+.wrap-box{
+  padding:13rpx 38rpx 0;
+  color: #252527;
+}
+.lc-line{
+  overflow: hidden;
+}
+.list-title .lc-say{
+  font-size:40rpx;
+  float: left;
+}
+.lc-tips{
+  color: #969696;
+}
+.lc-switch{
+  font-size:24rpx;
+  color:#252527;
+  text-decoration:underline;
+  float:left;
+}
+.list-title .btn-text,.lc-tips{
+  font-size:24rpx;
+  float:right;
+}
+.btn-text{
+  text-decoration: underline;
+}
+.wrap-box .list-title{
+  margin-bottom:0rpx;
+}
+
+.form-box{
+    position: relative;
+    margin-top:30rpx;
+    white-space: nowrap;
+    font-size:0;
+    min-height:85rpx;
+    vertical-align: top;
+    border:1rpx solid rgba(255,255,255,.0);
+}
+.form-box.form-first{
+  margin-top:45rpx; 
+}
+.form-box input{
+    padding:10rpx 0;
+    font-size:28rpx;
+    border-bottom:1rpx solid #dbdada;
+    height:84rpx;
+    box-sizing:border-box;
+}
+.form-box .section input{
+    color:#252527;
+    margin-top:0;
+    box-sizing:border-box;
+    height:84rpx;
+    width:432rpx;
+    border:0;
+}
+.form-box .section{
+  border-bottom:1rpx solid #dbdada;
+}
+.form-box .code-btn{
+    width:240rpx;
+    font-size:24rpx;
+    color:#252527;
+    box-sizing:border-box;
+    position:absolute;
+    right:0;
+    height:112rpx;
+    top:-28.5rpx;
+    border-left:1rpx solid #dbdada;
+    padding:10rpx 20rpx;
+    text-align:center;
+    line-height:100rpx;
+    background-color:#f7f7f7;
+    z-index:2;
+}
+.form-box .error-rmsg {
+    position:absolute;
+    bottom:26rpx;
+    color:#c53b23;
+    font-size:28rpx;
+    right:0;
+}
+.select-right{
+  width: 21rpx;
+  height: 12rpx;
+  position:absolute;
+  right:0;
+  top:34rpx;
+}
+.error-msg{
+    position: absolute;
+    bottom:-38rpx;
+    color:#c52b14;
+    font-size:24rpx;
+}
+.show{
+    display:block;
+}
+.hidden{
+    display:none;
+}
+
+.sub-btn{
+  height: 90rpx;
+	background-color: #c53b23;
+	border-radius: 5px;
+  color:#fff;
+}
+.lc-tips.lc-red{
+  color:#c53b23;
+}
+.lc-mt0{
+  margin-top:0 !important;
+}
+.lc-ml0{
+  margin-left:0 !important;
+}
+.lc-ball{
+  word-break:break-all;
+}
+
+.form-hrimg{
+  width:45rpx;
+  height:40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.form-hrtext{
+  margin-left:15rpx;
+  font-size:24rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.form-hr{
+  padding:17rpx 38rpx;
+  margin:0 -38rpx;
+  border-bottom:1rpx solid #dbdada;
+}
+
+.form-label{
+  font-size: 28rpx;
+  color:#808080;
+}
+.form-label .label-small{
+  font-size:20rpx;
+  margin-left:6rpx;
+}

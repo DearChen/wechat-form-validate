@@ -1,2 +1,50 @@
 <!--pages/common/form.wxml-->
-<text>pages/common/form.wxml</text>
+<wxs module="comm" src="../../utils/common.wxs"></wxs>
+<view class="wrap-box">
+  <view class="list-title">
+    <view class="lc-line">
+      <view class="lc-say">示例（必填、长度、正则校验）</view>
+    </view>
+    <form class="login-content">
+      <view class="form-box form-first">
+        <view class="form-hr">
+          <image class="form-hrimg" src="/images/register.png"></image>
+          <view class="form-hrtext">用户注册</view>
+        </view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="uname" data-required placeholder="姓名（必填）" bindinput="save" value="{{form.uname}}"/>
+        <view class="error-msg" wx:if="{{validate.uname_required}}">请输入姓名</view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="age" data-required placeholder="年龄（必填）" bindinput="save" value="{{form.age}}"/>
+        <view class="error-msg" wx:if="{{validate.age_required}}">请输入年龄</view>
+      </view>
+      <view class="form-box">
+        <picker class="v-model" bindchange="bindGenderChange" data-key="gendername" range-key="value" range="{{genderlist}}">
+          <image class="select-right" src='/images/select.png'></image>
+          <input type="text" disabled='true' placeholder='性别' value="{{form.gendername}}"/>
+        </picker>
+        <view class="error-msg" wx:if="{{validate.gendername_required}}">请选择性别</view>
+      </view>
+
+      <view class="form-box">
+        <view class="form-hr">
+          <image class="form-hrimg" src="/images/call.png"></image>
+          <view class="form-hrtext">联系方式</view>
+        </view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="user_email" data-pattern="^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$" bindinput="save" placeholder='邮箱地址（非必填）' value="{{form.user_email}}"/>
+        <view class="error-msg" wx:if="{{validate.user_email_pattern}}">请输入正确的邮箱</view>
+      </view>
+      <view class="form-box lc-mt0"></view>
+      <view class="form-box lc-mt0">
+        <button class="sub-btn" bindtap="submitFun">提交</button>
+      </view>
+      <view class="form-box lc-mt0"></view>
+    </form>
+    <view class="lc-ball">表单：{{comm.stringify(form)}}</view>
+    <view class="lc-ball">校验：{{comm.stringify(validate)}}</view>
+  </view>
+</view>

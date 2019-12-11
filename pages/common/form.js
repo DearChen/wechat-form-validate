@@ -1,13 +1,36 @@
 // pages/common/form.js
-Page({
+const vobj = require("../../utils/validate.js");  //引入表单校验辅助对象。
+Page(Object.assign({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    form:{},        //表单数据对象。必须有一个空对象占位。
+    validate: {},   //表单校验结果对象。必须有一个空对象占位。
+    genderlist: [{ key: 0, value: '不填' }, { key: 2, value: '男' }, { key: 1, value: '女' }]
   },
-
+  bindGenderChange: function (e) {  //一个非input类型输入的兼容处理函数。
+    var index = e.detail.value;
+    var obj = this.data.genderlist[index];
+    var vobj = this.data.form;
+    vobj.gender = obj.key;    //对应赋值。
+    vobj.gendername = obj.value;
+    this.setData({ "form": vobj });
+    this.saveItem(e.currentTarget.dataset, vobj.gendername);  //触发校验。
+  },
+  submitFun: function () {
+    var that = this;
+    that.getValidate(function (flag) {
+      if (flag) {
+        console.log("校验通过，可以提交");
+        //通过处理。
+      }else{
+        console.log("校验不通过！");
+        //不通过处理
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -63,4 +86,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+},vobj));  //表单校验对象继承到page方法中。

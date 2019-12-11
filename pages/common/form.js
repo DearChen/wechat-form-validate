@@ -35,7 +35,15 @@ Page(Object.assign({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //可以在这里对表单赋初值。（表单数据回显）
+    // this.setData({
+    //   "form":{
+    //     uname:"测试",
+    //     age:24,
+    //     gender:2,
+    //     gendername:"男"
+    //   }
+    // });
   },
 
   /**

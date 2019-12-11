@@ -3,7 +3,7 @@
 <view class="wrap-box">
   <view class="list-title">
     <view class="lc-line">
-      <view class="lc-say">示例（必填、长度、正则校验）</view>
+      <view class="lc-say">示例（必填、正则校验）</view>
     </view>
     <form class="login-content">
       <view class="form-box form-first">
@@ -17,7 +17,7 @@
         <view class="error-msg" wx:if="{{validate.uname_required}}">请输入姓名</view>
       </view>
       <view class="form-box">
-        <input type="text" class="v-model" data-key="age" data-required placeholder="年龄（必填）" bindinput="save" value="{{form.age}}"/>
+        <input type="text" class="v-model" data-key="age" maxlength="3" data-required placeholder="年龄（必填）" bindinput="save" value="{{form.age}}"/>
         <view class="error-msg" wx:if="{{validate.age_required}}">请输入年龄</view>
       </view>
       <view class="form-box">

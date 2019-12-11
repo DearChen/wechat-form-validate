@@ -1,13 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="fun-title">
+    <text>表单校验使用示例</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="fun-list">
+    <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/common/form">一般校验实现</button>
+    <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/custom/form">自定义校验</button>
+    <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/async/form">异步校验</button>
   </view>
 </view>

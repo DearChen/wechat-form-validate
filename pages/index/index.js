@@ -10,9 +10,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function() {
+  goTo: function(e) {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: e.currentTarget.dataset.aim
     })
   },
   onLoad: function () {

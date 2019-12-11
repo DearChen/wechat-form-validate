@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/common/form",
+    "pages/custom/form",
+    "pages/async/form",
+    "pages/multiple/validate"
   ],
   "window": {
     "backgroundTextStyle": "light",

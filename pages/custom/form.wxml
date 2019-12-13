@@ -1,2 +1,72 @@
 <!--pages/custom/form.wxml-->
-<text>pages/custom/form.wxml</text>
+<wxs module="comm" src="../../utils/common.wxs"></wxs>
+<view class="wrap-box">
+  <view class="list-title">
+    <view class="lc-line">
+      <view class="lc-say">示例（必填、正则+自定义）</view>
+    </view>
+    <form class="login-content">
+      <view class="form-box form-first">
+        <view class="form-hr">
+          <image class="form-hrimg" src="/images/register.png"></image>
+          <view class="form-hrtext">用户注册</view>
+        </view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="uname" data-required placeholder="姓名（必填）" bindinput="save" value="{{form.uname}}"/>
+        <view class="error-msg" wx:if="{{validate.uname_required}}">请输入姓名</view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="age" maxlength="3" data-required placeholder="年龄（必填0~100）" bindinput="save" value="{{form.age}}" data-custom="ageCustomFun"/>
+        <view class="error-msg" wx:if="{{validate.age_required}}">请输入年龄</view>
+        <view class="error-msg" wx:if="{{validate.age_custom}}">请输入0~100的数字</view>
+      </view>
+      <view class="form-box">
+        <picker class="v-model" bindchange="bindGenderChange" data-key="gendername" range-key="value" range="{{genderlist}}">
+          <image class="select-right" src='/images/select.png'></image>
+          <input type="text" disabled='true' placeholder='性别' value="{{form.gendername}}"/>
+        </picker>
+        <view class="error-msg" wx:if="{{validate.gendername_required}}">请选择性别</view>
+      </view>
+
+      <view class="form-box">
+        <view class="form-hr">
+          <image class="form-hrimg" src="/images/price.png"></image>
+          <view class="form-hrtext">区间联动校验示例</view>
+        </view>
+      </view>
+      <view class="form-box input-group">
+        <text class="form-label">价格区间</text>
+        <view class="group-item">
+          <input type="number" class="v-model" data-key="min_price" bindinput="save" placeholder='最低价格' value="{{form.min_price}}" data-custom="minCustomFun"/>
+        </view>
+        <text class="group-tips">-</text>
+        <view class="group-item">
+          <input type="number" class="v-model" data-key="max_price" bindinput="save" placeholder='最高价格' value="{{form.max_price}}" data-custom="maxCustomFun"/>
+        </view>
+        <text class="form-unit">元</text>
+        <view class="error-msg" wx:if="{{validate.min_price_custom || validate.max_price_custom}}">输入的最高价格需要大于最低价格</view>
+      </view>
+      <view class="form-box input-group">
+        <text class="form-label">面积区间</text>
+        <view class="group-item">
+          <input type="number" class="v-model" data-key="min_area" bindinput="save" placeholder='最小面积' value="{{form.min_area}}" data-custom="minCustomFun"/>
+        </view>
+        <text class="group-tips">-</text>
+        <view class="group-item">
+          <input type="number" class="v-model" data-key="max_area" bindinput="save" placeholder='最大面积' value="{{form.max_area}}" data-custom="maxCustomFun"/>
+        </view>
+        <text class="form-unit">元</text>
+        <view class="error-msg" wx:if="{{validate.min_area_custom || validate.max_area_custom}}">输入的最大面积需要大于最小面积</view>
+      </view>
+      
+      <view class="form-box lc-mt0"></view>
+      <view class="form-box lc-mt0">
+        <button class="sub-btn" bindtap="submitFun">提交</button>
+      </view>
+      <view class="form-box lc-mt0"></view>
+    </form>
+    <view class="lc-ball">表单：{{comm.stringify(form)}}</view>
+    <view class="lc-ball">校验：{{comm.stringify(validate)}}</view>
+  </view>
+</view>

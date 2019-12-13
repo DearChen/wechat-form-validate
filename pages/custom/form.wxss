@@ -1,1 +1,2 @@
 /* pages/custom/form.wxss */
+@import '../common/form.wxss';

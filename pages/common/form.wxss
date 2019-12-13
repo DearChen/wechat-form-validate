@@ -104,8 +104,8 @@
 }
 
 .sub-btn{
-  height: 90rpx;
-	background-color: #c53b23;
+  /* height: 90rpx; */
+	background-color: #613411;
 	border-radius: 5px;
   color:#fff;
 }
@@ -147,4 +147,33 @@
 .form-label .label-small{
   font-size:20rpx;
   margin-left:6rpx;
+}
+.form-box.input-group{
+  border-bottom: 1rpx solid #dbdada;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+}
+.form-box.input-group text{
+  font-size:28rpx;
+  vertical-align: bottom;
+}
+.form-box.input-group input{
+  border-bottom: 0;
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+}
+.form-box.input-group .group-item{
+  display: inline-block;
+  vertical-align: bottom;
+  background-color: #eee;
+}
+.form-box .form-label{
+  margin-right:30rpx;
+}
+.input-group .group-tips{
+  margin: 0 20rpx;
+}
+.form-box .form-unit{
+  margin-left:30rpx;
 }

@@ -29,10 +29,15 @@ wechat-form-validate
 * bindinput 触发值填写，自动将输入的值通过校验工具的save写入到form对象通过data-key指定的键里。这里推荐统一使用校验工具导入的save方法。（如果有特殊输入处理可以自定义其它方法，最后通过this.save(e)或者this.saveItem(data,value)在你的方法里触发该项的校验。）
 * value 属性用于值回填，回显表单初值。
 
+
 项目参考
 --------
 
 实现思路参考：[vue-form](https://github.com/fergaldoyle/vue-form) 最早追溯到angular1.x
+
+最后
+--------
+使用时如果遇到问题欢迎到issues中提问，该项目对你有用的话请给个Star哦。Thanks
 
 Author
 ------

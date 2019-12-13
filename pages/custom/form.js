@@ -7,7 +7,7 @@ Page(Object.assign({
    */
   data: {
     form: {},        //表单数据对象。必须有一个空对象占位。
-    validate: {},   //表单校验结果对象。必须有一个空对象占位。
+    validate: {},    //表单校验结果对象。必须有一个空对象占位。
     genderlist: [{ key: 0, value: '不填' }, { key: 2, value: '男' }, { key: 1, value: '女' }]
   },
 
@@ -41,6 +41,7 @@ Page(Object.assign({
       return false;
     }
   },
+  
   /**
    * 通用最小值自定义控制。
    */
@@ -67,6 +68,7 @@ Page(Object.assign({
       return true;
     }
   },
+
   /**
    * 通用最大值自定义控制。
    */
@@ -92,6 +94,7 @@ Page(Object.assign({
       return true;
     }
   },
+
   /**
    * 表单提交处理
    */

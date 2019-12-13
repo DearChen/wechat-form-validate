@@ -1,2 +1,52 @@
 <!--pages/async/form.wxml-->
-<text>pages/async/form.wxml</text>
+<wxs module="comm" src="../../utils/common.wxs"></wxs>
+<view class="wrap-box">
+  <view class="list-title">
+    <view class="lc-line">
+      <view class="lc-say">示例（必填、正则校验+异步校验）</view>
+    </view>
+    <form class="login-content">
+      <view class="form-box form-first">
+        <view class="form-hr">
+          <image class="form-hrimg" src="/images/register.png"></image>
+          <view class="form-hrtext">用户注册</view>
+        </view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="uname" data-required placeholder="姓名（必填）" bindinput="save" value="{{form.uname}}"/>
+        <view class="error-msg" wx:if="{{validate.uname_required}}">请输入姓名</view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="age" maxlength="3" data-required placeholder="年龄（必填）" bindinput="save" value="{{form.age}}"/>
+        <view class="error-msg" wx:if="{{validate.age_required}}">请输入年龄</view>
+      </view>
+      <view class="form-box">
+        <picker class="v-model" bindchange="bindGenderChange" data-key="gendername" range-key="value" range="{{genderlist}}">
+          <image class="select-right" src='/images/select.png'></image>
+          <input type="text" disabled='true' placeholder='性别' value="{{form.gendername}}"/>
+        </picker>
+        <view class="error-msg" wx:if="{{validate.gendername_required}}">请选择性别</view>
+      </view>
+
+      <view class="form-box">
+        <view class="form-hr">
+          <image class="form-hrimg" src="/images/call.png"></image>
+          <view class="form-hrtext">联系方式</view>
+        </view>
+      </view>
+      <view class="form-box">
+        <input type="text" class="v-model" data-key="phone" data-required data-pattern="^(1[3-9])\\d{9}$" bindinput="save" data-async="asyncPhoneCheckFun" placeholder='手机号（必填）' value="{{form.phone}}"/>
+        <view class="error-msg" wx:if="{{validate.phone_required}}">请输入手机号</view>
+        <view class="error-msg" wx:if="{{validate.phone_pattern}}">请输入正确的手机号</view>
+        <view class="error-msg" wx:if="{{validate.phone_async}}">手机号已存在不可重复使用</view>
+      </view>
+      <view class="form-box lc-mt0"></view>
+      <view class="form-box lc-mt0">
+        <button class="sub-btn" bindtap="submitFun">提交</button>
+      </view>
+      <view class="form-box lc-mt0"></view>
+    </form>
+    <view class="lc-ball">表单：{{comm.stringify(form)}}</view>
+    <view class="lc-ball">校验：{{comm.stringify(validate)}}</view>
+  </view>
+</view>

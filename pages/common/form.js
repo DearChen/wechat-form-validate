@@ -6,11 +6,15 @@ Page(Object.assign({
    * 页面的初始数据
    */
   data: {
-    form:{},        //表单数据对象。必须有一个空对象占位。
-    validate: {},   //表单校验结果对象。必须有一个空对象占位。
+    form: {},        //表单数据对象。必须有一个空对象占位。
+    validate: {},    //表单校验结果对象。必须有一个空对象占位。
     genderlist: [{ key: 0, value: '不填' }, { key: 2, value: '男' }, { key: 1, value: '女' }]
   },
-  bindGenderChange: function (e) {  //一个非input类型输入的兼容处理函数。
+
+  /**
+   * 一个非input类型输入的兼容处理函数。
+   */
+  bindGenderChange: function (e) {
     var index = e.detail.value;
     var obj = this.data.genderlist[index];
     var vobj = this.data.form;
@@ -19,6 +23,10 @@ Page(Object.assign({
     this.setData({ "form": vobj });
     this.saveItem(e.currentTarget.dataset, vobj.gendername);  //触发校验。
   },
+
+  /**
+   * 表单提交处理
+   */
   submitFun: function () {
     var that = this;
     that.getValidate(function (flag) {
@@ -31,6 +39,7 @@ Page(Object.assign({
       }
     });
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */

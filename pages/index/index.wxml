@@ -6,6 +6,6 @@
   <view class="fun-list">
     <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/common/form">一般校验实现</button>
     <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/custom/form">自定义校验</button>
-    <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/async/form" disabled="true">异步校验</button>
+    <button type="default" class="fun-item" bindtap="goTo" data-aim="/pages/async/form">异步校验</button>
   </view>
 </view>

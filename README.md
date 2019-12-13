@@ -13,7 +13,9 @@ wechat-form-validate
 
 ```html
 <view class="form-box">
-    <input type="text" class="v-model" data-key="phone" data-required data-pattern="^(1[3-9])\\d{9}$" bindinput="save" data-async="asyncPhoneCheckFun" placeholder='手机号（必填）' value="{{form.phone}}"/>
+    <input type="text" class="v-model" data-key="phone" 
+        data-required data-pattern="^(1[3-9])\\d{9}$" data-async="asyncPhoneCheckFun" 
+        bindinput="save" placeholder='手机号（必填）' value="{{form.phone}}"/>
     <view class="error-msg" wx:if="{{validate.phone_required}}">请输入手机号</view>
     <view class="error-msg" wx:if="{{validate.phone_pattern}}">请输入正确的手机号</view>
     <view class="error-msg" wx:if="{{validate.phone_async}}">手机号已存在不可重复使用</view>

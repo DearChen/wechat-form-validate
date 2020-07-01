@@ -3,6 +3,9 @@ wechat-form-validate
 
 240行的微信小程序表单验证工具，可以快速实现必填校验、正则校验、自定义校验和异步校验。
 
+<h2 align = "center" style="">体验Demo</h2>
+<div align=center ><img width="200" height="200" src="https://wx4.sinaimg.cn/mw690/bcef58c1ly1ggbb42hd6pj20760760u3.jpg"/></div>
+
 简介
 --------
 

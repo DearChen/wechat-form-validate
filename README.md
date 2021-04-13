@@ -57,7 +57,7 @@ Page(Object.assign({
 
 最后
 --------
-使用时如果遇到问题欢迎到issues中提问，该项目对你有用的话请给个Star哦。Thanks
+使用时如果遇到问题欢迎到issues中提问，该项目对你有用的话请给个Star哦。Thanks~
 
 Author
 ------
